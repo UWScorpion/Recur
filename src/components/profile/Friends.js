@@ -175,7 +175,7 @@ export default withRouter(function Friends(props) {
                     placeholder="Search for Friends to study with"
                     onChange={(e) => setSearchValue(e.target.value)}
                   />
-                  <SearchButton disabled={loading} onClick={(e) => onSubmit(e)}>Search</SearchButton>
+                  <SearchButton disabled={searchValue.length < 3 || loading} onClick={(e) => onSubmit(e)}>Search</SearchButton>
                 </Box>
               </Grid>
             </Box> 
