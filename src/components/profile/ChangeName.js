@@ -139,7 +139,7 @@ export default (function ChangeName(props) {
       {error
         ? <Typography className={classes.error} color="textPrimary" variant="body1">{error}</Typography>
         : null}
-      <ColorButton disabled={loading} onClick={() => onSave()} style={{ marginBottom: '5%'}}>Save</ColorButton>
+      <ColorButton disabled={loading} onClick={() => (firstName === '' || lastName === '') || onSave()} style={{ marginBottom: '5%'}}>Save</ColorButton>
       <Link className={classes.changePassword} onClick={() => props.handleToggleView('password') }>Change Password</Link>
     </Box>
   );
