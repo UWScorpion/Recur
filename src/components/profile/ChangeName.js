@@ -7,7 +7,7 @@ import _Dialog from '@material-ui/core/Dialog';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import ColorButton from 'src/components/button/ColorButton';
-import AddAPhotoOutlinedIcon from '@material-ui/icons/AddAPhotoOutlined';
+import CameraIcon from 'src/assets/images/icon_camera.png';
 import IconButton from '@material-ui/core/IconButton';
 import { actionSigninUser } from 'src/actions/actions';
 import { requestViewer } from 'src/requests/authRequests';
@@ -40,6 +40,10 @@ const useStyles = makeStyles(theme => ({
   },
   insidetext: {
     borderRadius: 10,
+  },
+  CameraIconSize: {
+    width:'30%',
+    height:'30%',
   },
   error: {
     fontSize: '1.125rem',
@@ -104,9 +108,9 @@ export default (function ChangeName(props) {
             ? <img src={user.photo.data.files[1].path} height={PHOTO_SIZE} />
             : <svg style={{ height: PHOTO_SIZE, width: '100%' }}><use xlinkHref={`#placeholder_photo`}></use></svg>}
         </Avatar>
-        <Box position="absolute" bottom={-14} right={-16}>
+        <Box position="absolute" bottom={-14} right={-30}>
           <IconButton disabled={loading} variant="outlined" component="label">
-            <AddAPhotoOutlinedIcon />
+            <img className = {classes.CameraIconSize} src = {CameraIcon} alt = 'AddPhoto'/>
             <input
               accept="image/*"
               style={{ display: 'none' }}
