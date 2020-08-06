@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import _Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import ChangePassword from 'src/components/profile/ChangePassword';
@@ -15,6 +16,9 @@ const useStyles = makeStyles(theme => ({
   title: {
     backgroundColor: '#FBFDFF',
     borderBottom: '2px solid #E6EBF5',
+  },
+  label: {
+    textTransform: 'capitalize',
   },
 }));
 
@@ -44,6 +48,7 @@ export default (function EditProfile(props) {
           <Box flexGrow={1}>
             <Typography className={classes.header} color="textPrimary" variant="h3">Edit Profile</Typography>
           </Box>
+          <Button className={classes.label} onClick={props.onClose} color="primary">cancel</Button>
         </Box>
       </DialogTitle>
       {selectedView === 'name'
