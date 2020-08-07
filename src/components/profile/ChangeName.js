@@ -82,12 +82,17 @@ export default (function ChangeName(props) {
   };
 
   const onSave = (photo_id) => {
-    setLoading(true);
-    setError(null);
-    var data = {
-      first_name: firstName,
-      last_name: lastName,
-    };
+    if (!firstName || !lastName){
+      setError('Please enter a valid name');
+      return;
+    } else {
+      setLoading(true);
+      setError(null);
+      var data = {
+        first_name: firstName,
+        last_name: lastName,
+      };
+    }
     if (photo_id) {
       data.photo_ids = [photo_id];
     }
